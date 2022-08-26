@@ -1,5 +1,7 @@
+import path from 'path'
+
 const config = {
-  projectName: 'temp1',
+  projectName: 'templete',
   date: '2022-8-24',
   designWidth: 750,
   deviceRatio: {
@@ -8,22 +10,32 @@ const config = {
     828: 1.81 / 2
   },
   sourceRoot: 'src',
-  outputRoot: 'dist',
+  outputRoot: `dist/${process.env.TARO_ENV}`,
   plugins: [],
   defineConstants: {
+    
+  },
+  alias: {
+    '@/assets': path.resolve(__dirname, '..', 'src/assets'),
+    '@/models': path.resolve(__dirname, '..', 'src/models'),
+    '@/services': path.resolve(__dirname, '..', 'src/services'),
+    '@/utils': path.resolve(__dirname, '..', 'src/utils')
   },
   copy: {
-    patterns: [
-    ],
+    patterns: [],
     options: {
     }
   },
   framework: 'react',
   compiler: 'webpack5',
   cache: {
-    enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+    enable: true, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+    profile: true,
   },
   mini: {
+    // prerender: {
+    //   match: 'pages/index/*'
+    // },
     postcss: {
       pxtransform: {
         enable: true,

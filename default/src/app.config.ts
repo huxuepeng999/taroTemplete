@@ -1,3 +1,5 @@
+
+
 export default defineAppConfig({
   pages: [
     'pages/index/index'
@@ -7,5 +9,5 @@ export default defineAppConfig({
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'black'
-  }
+  },
 })

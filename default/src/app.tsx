@@ -7,10 +7,13 @@ import {
   useRecoilState,
   useRecoilValue,
 } from 'recoil';
-
+import 'taro-ui/dist/style/index.scss' 
 
 class App extends Component<any, any> {
+
   componentDidMount() { }
+
+  onLaunch(options) { }
 
   componentDidShow() { }
 
